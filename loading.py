@@ -33,10 +33,12 @@ def load_directory(directory):
     for filename in listdir(directory):
         if filename[filename.rfind('.')+1:] in ["fa", "fasta", "fna"]:
             files[filename] = load_fna(path.join(directory, filename))
-    
     return files
 
 
 if __name__ == "__main__":
     files = load_directory("data")
-    print(len(files))
+    print('lenght:',len(files))
+    for i in files:
+        print(i, type(files[i]), len(files[i]))
+    

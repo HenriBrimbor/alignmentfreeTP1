@@ -40,7 +40,8 @@ def stream_kmers(text, k):
             else: # index-retenue+1 >= k:
                 comp += nucl_comp<<(2*(k))
                 comp >>= 2
-                yield kmer, comp
+                yield kmer
+                yield comp
         else:
             # Dans le cas où l'on aurait une lettre qui n'est pas dans la liste des lettres, dans les k premières lettres
             # on doit l'ignorer mais décrémenter l'index
